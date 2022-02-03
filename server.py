@@ -21,8 +21,6 @@ def sudoku():
 
 @app.route('/solve_sudoku', methods=['POST'])
 def solve_sudoku():
-    
-
     json = request.json
     
     sudoku = json['sudoku']
