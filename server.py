@@ -80,6 +80,5 @@ def api_example():
     response = requests.post(url='https://sudoku-solver-with-python.herokuapp.com/solve_sudoku', json=data)
     return response.json()
 
-# web: gunicorn server:app
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=False)
