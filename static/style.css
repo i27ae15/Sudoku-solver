@@ -1,0 +1,53 @@
+
+
+.sudoku {
+    margin-left: 26%;
+    padding-top: 2%;
+    padding-bottom: 2%;
+}
+
+.grid{
+    /* padding: 20px; */
+    display: grid;
+    width: 65%;
+    grid-template-columns: repeat(9, 1fr);
+}
+
+
+.grid .block{
+
+    height: 50px;
+    width: 100%;
+    position: relative;
+    background: white;
+
+    border-top: gray solid 1px;
+    border-bottom: gray solid 1px;
+    border-left: gray solid 1px;
+    border-right: gray solid 1px;
+
+    
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+}
+
+input{
+    border: none;
+    width: 100%;
+
+    font-size: 35px;
+    text-align: center;
+}
+
+input:focus
+{
+    outline: none;
+    background-color:#dcdfe5;
+}
+
+
+.sudokuCardBox p {
+    font-weight: 600;
+}
+

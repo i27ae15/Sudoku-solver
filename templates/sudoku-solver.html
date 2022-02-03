@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{% include('templates/header.html') %}
+
+<style>
+    h1,
+    input {
+        font-family: 'Cinzel', serif;
+        font-weight: 600;
+    }
+
+    button,
+    a {
+        font-family: 'Nanum Myeongjo', serif;
+    }
+
+    .invisible {
+        position: absolute;
+        visibility: hidden;
+    }
+
+    #pMultiple{
+        display: inline;
+        margin: 0 3%;
+    }
+
+    #sudokuChanger{
+        margin-bottom: 2%;
+    }
+
+    #sudokuChanger i{
+        cursor: pointer;
+    }
+</style>
+
+<body onload="creatingGrid(9)">
+
+    <div class="cardBox sudokuCardBox">
+        <div class="card" style="margin: 0 10%;">
+
+            <h1>A Sudoku Solver</h1>
+
+            <div class="sudoku">
+                <div class="grid">
+
+                    {% for x in range(9): %}
+                    {% for y in range(9): %}
+
+                    <div class="block {{x}} y{{y}}">
+                        <input type="text" min="1" max="9" name="x{{x}}" id="x{{x}}-y{{y}}">
+                    </div>
+
+                    {% endfor %}
+                    {% endfor %}
+
+                </div>
+
+            </div>
+            <div class="invisible" id="sudokuChanger">
+
+                <i class="fas fa-arrow-left invisible" id="leftArrow" onclick="sudokuChanger(0)"></i>
+                <p id="pMultiple"></p>
+                <i class="fas fa-arrow-right" id="rightArrow" onclick="sudokuChanger(1)"></i>
+            </div>
+            <div class="buttons">
+                <button type="button" class="btn btn-success btn-lg" id="solve">Solve</button>
+                <button type="button" class="btn btn-primary btn-lg" onclick="reset_sudoku()">Reset</button>
+                <a href="{{url_for('sudoku_api_doc')}}" type="button" class="btn btn-dark btn-lg">Use our API</a>
+                <a href="https://github.com/i27ae15/Sudoku-solver.git" type="button" class="btn btn-dark btn-lg">View code</a>
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>
