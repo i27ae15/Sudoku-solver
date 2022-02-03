@@ -57,6 +57,10 @@ input:focus
         margin: 5%;
 
     }
+
+    input{
+        font-size: 22px;
+    }
     
     .grid .block{
         height: 35px;
