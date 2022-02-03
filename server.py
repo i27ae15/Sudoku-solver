@@ -77,7 +77,7 @@ def api_example():
     [0, 0, 7, 0, 0, 0, 0, 0, 9]]
 
     data = {'sudoku': sudoku_example, 'max_solutions': 10}
-    response = requests.post(url='http://localhost:5000/solve_sudoku', json=data)
+    response = requests.post(url='https://sudoku-solver-with-python.herokuapp.com/solve_sudoku', json=data)
     return response.json()
 
 
